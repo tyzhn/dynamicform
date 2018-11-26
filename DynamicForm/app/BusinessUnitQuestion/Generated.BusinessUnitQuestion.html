@@ -1,0 +1,219 @@
+  <div id="page-wrap">
+       
+        <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+                <form class="form-inline">
+                               <div class="form-group" style="width:100%">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <label>Search :</label>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <div  class="col-md-6 col-sm-12">
+                            <button data-toggle="modal" data-target="#addBusinessUnitQuestionModal" class="btn btn-primary " style="float:right">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+                </form>
+            </div>
+        </div>
+        <table id="jobid">
+            <tbody>
+                <tr>
+                    <td class="header_td">
+                        <div class="header_container">
+												 <div class="header_title" (click)="tbljoborderBy='BusinessUnitQuestionID'; tbljobreverseSort = !tbljobreverseSort">BusinessUnitQuestionID
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='BusinessUnitQuestionID','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='BusinessUnitQuestionID'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='QuestionID'; tbljobreverseSort = !tbljobreverseSort">QuestionID
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='QuestionID','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='QuestionID'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='BusinessUnitID'; tbljobreverseSort = !tbljobreverseSort">BusinessUnitID
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='BusinessUnitID','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='BusinessUnitID'}" class="fa fa-sort"></i></span>
+                            </div>
+					
+					 <div class="header_title" >Actions</div>
+
+                        </div>
+                    </td>
+
+                </tr>
+                <tr *ngFor="let data of BusinessUnitQuestionList ; let i= index">
+                    <td>
+                        <div class="row_container">
+						<div class="title_container">
+                                <div class="row_title">S.NO.</div>
+                                <div class="row_detail">
+									
+                                    <a (click)="showdetails(0,'sno')"><i class="fa fa-chevron-down" id="icon_sno{{i+1}}"></i></a>
+									
+                                    {{i+1}}
+                                </div>
+                            </div>
+													<div class="title_container">
+                                <div class="row_title">BusinessUnitQuestionID</div>
+                                <div class="row_detail">
+                                    {{data.BusinessUnitQuestionID}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">QuestionID</div>
+                                <div class="row_detail">
+                                    {{data.QuestionID}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">BusinessUnitID</div>
+                                <div class="row_detail">
+                                    {{data.BusinessUnitID}}
+                                </div>
+                            </div>
+										  <div class="title_container">
+                          <div class="row_title"> Actions</div>
+                          <div class="row_detail">
+						     <a href="javascript:void(0)" alt="Edit BusinessUnitQuestion" data-target="#editBusinessUnitQuestionModal" data-toggle="modal">
+                                   <span class="fa fa-edit" title="Edit BusinessUnitQuestion"> </span>
+                               </a>
+							 <a href="javascript:void(0)"  alt="Delete BusinessUnitQuestion">
+                                  <span class="fa fa-trash" title="Delete BusinessUnitQuestion"> </span>
+                            </a>
+						   </div>
+                        </div>
+                        <div class="detail_inner hidden" id="jobid{{i+1}}">
+
+						                            
+                        </div>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-7 col-sm-12 text-right">
+              
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--Add BusinessUnitQuestion modal-->
+	<div class="modal fade" id="addBusinessUnitQuestionModal" tabindex="-1" role="dialog" aria-labelledby="addBusinessUnitQuestionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="addBusinessUnitQuestionModalLabel">Add BusinessUnitQuestion</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">BusinessUnitQuestionID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="BusinessUnitQuestion.BusinessUnitQuestionID" name="BusinessUnitQuestionID" placeholder="BusinessUnitQuestionID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">QuestionID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="BusinessUnitQuestion.QuestionID" name="QuestionID" placeholder="QuestionID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">BusinessUnitID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="BusinessUnitQuestion.BusinessUnitID" name="BusinessUnitID" placeholder="BusinessUnitID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Edit BusinessUnitQuestion modal-->
+
+	<div class="modal fade" id="editBusinessUnitQuestionModal" tabindex="-1" role="dialog" aria-labelledby="editBusinessUnitQuestionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="editBusinessUnitQuestionModalLabel">Edit BusinessUnitQuestion</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">BusinessUnitQuestionID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="BusinessUnitQuestion.BusinessUnitQuestionID" name="BusinessUnitQuestionID" placeholder="BusinessUnitQuestionID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">QuestionID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="BusinessUnitQuestion.QuestionID" name="QuestionID" placeholder="QuestionID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">BusinessUnitID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="BusinessUnitQuestion.BusinessUnitID" name="BusinessUnitID" placeholder="BusinessUnitID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	

@@ -1,0 +1,308 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+
+
+<#+ // Component Code Generation #>
+<#+
+    void GenerateComponentFile(string componentName)
+    {
+#>
+import { Component } from '@angular/core';
+import { <#= componentName #>Service } from './Generated.<#= componentName #>.Service';
+declare var $: any;
+@Component({
+    selector: '<#= componentName.ToLower() #>',
+    templateUrl: './Generated.<#= componentName+".html" #>',
+	providers: [<#= componentName #>Service]
+})
+
+export class <#= componentName+"Component" #> {
+
+    <#= componentName #>List: any;
+    <#= componentName #> = {};
+   
+    constructor(private <#= componentName.ToLower() #>Service: <#= componentName #>Service) {
+	this.Get<#= componentName #>();
+    }
+
+	 Get<#= componentName #>() {
+        this.<#= componentName.ToLower() #>Service.get<#= componentName #>()
+            .subscribe(result => { this.<#= componentName #>List = result },
+            error => console.log("error : " + error),
+            function () { });
+    }
+
+	Get<#= componentName #>ById(<#= componentName #>ID: number) {
+        this.<#= componentName.ToLower() #>Service.get<#= componentName #>ByID(<#= componentName #>ID)
+            .subscribe(result => { this.<#= componentName #> = result },
+            error => console.log("error : " + error),
+            function () { });
+    }
+
+    Save<#= componentName #>(<#= componentName #>) {
+    
+        this.<#= componentName.ToLower() #>Service.addOrUpdate<#= componentName #>(<#= componentName #>)
+            .subscribe(result =>this.Get<#= componentName #>(),
+            error => console.log("error : " + error),
+            function () { console.log("Save completed!!!") });
+    }
+
+
+	Delete<#= componentName #>(<#= componentName #>ID: number) {
+    
+        this.<#= componentName.ToLower() #>Service.delete<#= componentName #>(<#= componentName #>ID)
+            .subscribe(result =>this.Get<#= componentName #>(),
+            error => console.log("error : " + error),
+            function () { console.log("Save completed!!!") });
+    }
+
+}
+
+<#+
+
+    }
+#>
+
+
+<#+ // Service Code Generation #>
+<#+
+    void GenerateServiceFile(string ServiceName)
+    {
+#>
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http'
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+@Injectable()
+
+export class <#= ServiceName+"Service" #>  {
+
+   
+    constructor(private _http: Http) { }
+
+    get<#= ServiceName #>() {
+        return this._http.get('api/<#= ServiceName #>s/Get<#= ServiceName #>s')
+		.map(response => response.json())
+    }
+
+
+	 get<#= ServiceName #>ByID(<#= ServiceName #>ID: number) {
+    let param = { id: <#= ServiceName #>ID };
+    return this._http.get('api/<#= ServiceName #>s/Get<#= ServiceName #>ByID?id=' + <#= ServiceName #>ID)
+	.map((response: Response) => response.json());
+  }
+
+  addOrUpdate<#= ServiceName #>(<#= ServiceName #>: any) {
+    let param = { <#= ServiceName.ToLower() #>: <#= ServiceName #> }
+    return this._http.post('api/<#= ServiceName #>s/Add<#= ServiceName #>', param).catch(this.handleError);
+  }
+
+    delete<#= ServiceName #>(<#= ServiceName #>ID: number){
+  
+    return this._http.delete('api/<#= ServiceName #>s/Delete<#= ServiceName #>?id='+<#= ServiceName #>ID)
+      .catch(this.handleError);
+  }
+
+
+   private handleError(error: Response) {
+    return Observable.throw(error.json().error || 'error');
+  }
+}
+
+
+<#+
+
+    }
+#>
+
+
+
+
+<#+ // Html Code Generation Template #>
+<#+
+    void GenerateHtmlFile(string tableName,List<string> columns)
+    {
+#>
+  <div id="page-wrap">
+       
+        <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+                <form class="form-inline">
+                               <div class="form-group" style="width:100%">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <label>Search :</label>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <div  class="col-md-6 col-sm-12">
+                            <button data-toggle="modal" data-target="#add<#= tableName #>Modal" class="btn btn-primary " style="float:right">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+                </form>
+            </div>
+        </div>
+        <table id="jobid">
+            <tbody>
+                <tr>
+                    <td class="header_td">
+                        <div class="header_container">
+						<#+
+						foreach(var column in columns.Take(8))
+						{
+						#>
+						 <div class="header_title" (click)="tbljoborderBy='<#= column #>'; tbljobreverseSort = !tbljobreverseSort"><#= column #>
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='<#= column #>','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='<#= column #>'}" class="fa fa-sort"></i></span>
+                            </div>
+					<#+	} #>
+
+					 <div class="header_title" >Actions</div>
+
+                        </div>
+                    </td>
+
+                </tr>
+                <tr *ngFor="let data of <#= tableName #>List ; let i= index">
+                    <td>
+                        <div class="row_container">
+						<div class="title_container">
+                                <div class="row_title">S.NO.</div>
+                                <div class="row_detail">
+									
+                                    <a (click)="showdetails(0,'sno')"><i class="fa fa-chevron-down" id="icon_sno{{i+1}}"></i></a>
+									
+                                    {{i+1}}
+                                </div>
+                            </div>
+						<#+ 
+						int i=0;
+						foreach(var column in columns.Take(8)){
+						#>
+							<div class="title_container">
+                                <div class="row_title"><#= column #></div>
+                                <div class="row_detail">
+                                    {{data.<#= column #>}}
+                                </div>
+                            </div>
+					<#+ 
+					i++;
+					}  #>
+					  <div class="title_container">
+                          <div class="row_title"> Actions</div>
+                          <div class="row_detail">
+						     <a href="javascript:void(0)" alt="Edit <#= tableName #>" data-target="#edit<#= tableName #>Modal" data-toggle="modal">
+                                   <span class="fa fa-edit" title="Edit <#= tableName #>"> </span>
+                               </a>
+							 <a href="javascript:void(0)"  alt="Delete <#= tableName #>">
+                                  <span class="fa fa-trash" title="Delete <#= tableName #>"> </span>
+                            </a>
+						   </div>
+                        </div>
+                        <div class="detail_inner hidden" id="jobid{{i+1}}">
+
+						<#+ foreach(var column in columns.Skip(8)){ #>
+							 <div class="detail_container">
+                                <div class="detail_title"><#= column #></div>
+                                <div class="detail">{{data.<#= column #>}}</div>
+                            </div>
+
+					<#+ }  #>
+                            
+                        </div>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-7 col-sm-12 text-right">
+              
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--Add <#= tableName #> modal-->
+	<div class="modal fade" id="add<#= tableName #>Modal" tabindex="-1" role="dialog" aria-labelledby="add<#= tableName #>ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="add<#= tableName #>ModalLabel">Add <#= tableName #></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	<#+ foreach(var column in columns){ #>
+
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description"><#= column #></label>
+                                            <input type="text" class="form-control" [(ngModel)]="<#= tableName #>.<#= column #>" name="<#= column #>" placeholder="<#= column #>" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					<#+ }  #>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Edit <#= tableName #> modal-->
+
+	<div class="modal fade" id="edit<#= tableName #>Modal" tabindex="-1" role="dialog" aria-labelledby="edit<#= tableName #>ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="edit<#= tableName #>ModalLabel">Edit <#= tableName #></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	<#+ foreach(var column in columns){ #>
+
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description"><#= column #></label>
+                                            <input type="text" class="form-control" [(ngModel)]="<#= tableName #>.<#= column #>" name="<#= column #>" placeholder="<#= column #>" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					<#+ }  #>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<#+
+
+    }
+#>

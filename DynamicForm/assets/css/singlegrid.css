@@ -1,0 +1,200 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.4 Georgia, Serif;
+}
+
+#page-wrap {
+    margin: 50px;
+}
+
+p {
+    margin: 20px 0;
+}
+
+/* 
+	Generic Styling, for Desktops/Laptops 
+	*/
+table {
+    border: 2px solid #8bc9dc;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.6), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: #efefef;
+}
+
+th {
+    background: #B0BECA;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.row_detail a {
+    color: #00708c;
+}
+
+@media only screen and (min-device-width: 1024px) {
+
+
+    .header_td {
+        background-color: #00708c;
+        color: white;
+        font-weight: bold;
+    }
+
+    .header_container {
+        width: 100%;
+        display: inline-flex;
+    }
+
+    .header_title {
+        display: inline-table;
+        width: 13%;
+        margin-right: 10px;
+    }
+
+    .row_container {
+        width: 100%;
+        display: inline-flex;
+    }
+
+    .title_container {
+        display: inline-table;
+        width: 13%;
+        margin-right: 10px;
+    }
+
+    .row_title {
+        display: none;
+    }
+
+    .detail_inner {
+        margin-top: 20px;
+        width: 100%;
+        display: inline-table;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .detail_container {
+        display: inherit;
+        width: 50%;
+        margin-bottom: 9px;
+    }
+
+    .detail_title {
+        display: table-cell;
+        width: 35%;
+        font-weight: bold;
+        color: #00708c;
+    }
+
+    .sno {
+        width: 5%;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .header_td {
+        display: none;
+    }
+
+    .row_container {
+        width: 100%;
+        display: inline-table;
+    }
+
+    .title_container {
+        display: inherit;
+        width: 50%;
+    }
+
+    .row_title {
+        display: table-cell;
+        width: 50%;
+        font-weight: bold;
+    }
+
+    .detail_inner {
+        width: 100%;
+        display: inline-table;
+    }
+
+    .detail_container {
+        display: inherit;
+        width: 50%;
+    }
+
+    .detail_title {
+        font-weight: bold;
+        display: table-cell;
+        width: 50%;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 520px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .header_td {
+        display: none;
+    }
+
+    .row_container {
+        width: 100%;
+        display: inline-table;
+    }
+
+    .title_container {
+        display: inherit;
+        width: 100%;
+    }
+
+    .row_title {
+        display: table-cell;
+        width: 50%;
+        font-weight: bold;
+    }
+
+    .detail_inner {
+        width: 100%;
+        display: inline-table;
+    }
+
+    .detail_container {
+        display: inherit;
+        width: 100%;
+    }
+
+    .detail_title {
+        display: table-cell;
+        width: 50%;
+        font-weight: bold;
+    }
+
+    .hidden {
+        display: none;
+    }
+}

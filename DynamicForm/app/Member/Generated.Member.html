@@ -1,0 +1,219 @@
+  <div id="page-wrap">
+       
+        <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+                <form class="form-inline">
+                               <div class="form-group" style="width:100%">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <label>Search :</label>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <div  class="col-md-6 col-sm-12">
+                            <button data-toggle="modal" data-target="#addMemberModal" class="btn btn-primary " style="float:right">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+                </form>
+            </div>
+        </div>
+        <table id="jobid">
+            <tbody>
+                <tr>
+                    <td class="header_td">
+                        <div class="header_container">
+												 <div class="header_title" (click)="tbljoborderBy='MemberID'; tbljobreverseSort = !tbljobreverseSort">MemberID
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='MemberID','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='MemberID'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='FirstName'; tbljobreverseSort = !tbljobreverseSort">FirstName
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='FirstName','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='FirstName'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='LastName'; tbljobreverseSort = !tbljobreverseSort">LastName
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='LastName','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='LastName'}" class="fa fa-sort"></i></span>
+                            </div>
+					
+					 <div class="header_title" >Actions</div>
+
+                        </div>
+                    </td>
+
+                </tr>
+                <tr *ngFor="let data of MemberList ; let i= index">
+                    <td>
+                        <div class="row_container">
+						<div class="title_container">
+                                <div class="row_title">S.NO.</div>
+                                <div class="row_detail">
+									
+                                    <a (click)="showdetails(0,'sno')"><i class="fa fa-chevron-down" id="icon_sno{{i+1}}"></i></a>
+									
+                                    {{i+1}}
+                                </div>
+                            </div>
+													<div class="title_container">
+                                <div class="row_title">MemberID</div>
+                                <div class="row_detail">
+                                    {{data.MemberID}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">FirstName</div>
+                                <div class="row_detail">
+                                    {{data.FirstName}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">LastName</div>
+                                <div class="row_detail">
+                                    {{data.LastName}}
+                                </div>
+                            </div>
+										  <div class="title_container">
+                          <div class="row_title"> Actions</div>
+                          <div class="row_detail">
+						     <a href="javascript:void(0)" alt="Edit Member" data-target="#editMemberModal" data-toggle="modal">
+                                   <span class="fa fa-edit" title="Edit Member"> </span>
+                               </a>
+							 <a href="javascript:void(0)"  alt="Delete Member">
+                                  <span class="fa fa-trash" title="Delete Member"> </span>
+                            </a>
+						   </div>
+                        </div>
+                        <div class="detail_inner hidden" id="jobid{{i+1}}">
+
+						                            
+                        </div>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-7 col-sm-12 text-right">
+              
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--Add Member modal-->
+	<div class="modal fade" id="addMemberModal" tabindex="-1" role="dialog" aria-labelledby="addMemberModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="addMemberModalLabel">Add Member</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">MemberID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Member.MemberID" name="MemberID" placeholder="MemberID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">FirstName</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Member.FirstName" name="FirstName" placeholder="FirstName" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">LastName</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Member.LastName" name="LastName" placeholder="LastName" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Edit Member modal-->
+
+	<div class="modal fade" id="editMemberModal" tabindex="-1" role="dialog" aria-labelledby="editMemberModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="editMemberModalLabel">Edit Member</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">MemberID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Member.MemberID" name="MemberID" placeholder="MemberID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">FirstName</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Member.FirstName" name="FirstName" placeholder="FirstName" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">LastName</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Member.LastName" name="LastName" placeholder="LastName" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	

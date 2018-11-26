@@ -1,0 +1,153 @@
+<div style="background-color:#4682b4; height:150px">
+</div><br><br><br><br>
+<div id="divMain" class="divMainQuestion">
+    <header class="header">
+        <div class="icons">
+            <!--<i class="fa fa-edit"></i>-->
+        </div>
+        <div class="header_container" style="display:flex">
+            <div id="headerTag">
+                <h1>{{formName}}</h1>
+            </div>
+            <!--<div class="btnRoute">
+                <a routerLink="/displayQuestion/{{SurveyFormId}}" class="btn" title="Go To Display Question"><i style="color:#ffffff; margin:1px 0 0 177px" class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            </div>-->
+        </div>
+    </header><br><br>
+
+    <div id="btnquestionRoute">
+        <a routerLink="/dynamicForm/" class="btn btn-info" title="Go To Multi Tenant - Dynamic Form">Go To Dynamic Form</a>
+        <a routerLink="/displayQuestion/{{SurveyFormId}}" class="btn" title="Go To Display Question">Display Questions</a>
+    </div>
+
+    <hr style="margin-left:50px;width:89%;">
+
+    <form (ngSubmit)="CreateQuestion(Question); addQuestionForm.resetForm()" #addQuestionForm="ngForm">
+        <div id="divQuestion">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <!--<div class="form-group">
+                            <div><label >Form Name</label></div>
+                            <div><input type="text" name="formName" [(ngModel)]="Question.formName" autofocus placeholder="Form Name"></div><br>
+                            <div><label>Form Description</label></div>
+                            <div><input type="textarea" name="formDescription" [(ngModel)]="Question.formDescription" placeholder="Form Description"></div>
+                        </div>-->
+                        <!--<hr style="margin-left:0px !important; width: 94% !important"><br>-->
+                        <div class="form-group">
+                            <label class="label-font">Question :</label><br>
+                            <textarea class="textArea" #questionText='ngModel' required name="QuestionText" [(ngModel)]="Question.Text" placeholder="Write Your Question Here!"></textarea>
+                            <div id="questionError" [hidden]="questionText.valid || questionText.untouched" class="alert alert-danger">
+                                <span class="errorMessage">Please Enter Question!!!</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="isRequiredDiv">
+                            <div>
+                                <label class="label-font" id="isRequiredLable">Is Required</label>
+                            </div>
+                            <div id="isRequiredColon">
+                                <label class="label-font">:</label>
+                            </div>
+                            <!--<div id="isRequiredRadio">
+                                <p class="btn-switch" style="margin: 15px;">
+                                    <input type="radio" id="yes" name="switch" class="btn-switch__radio btn-switch__radio_yes" />
+                                    <input type="radio" checked id="no" name="switch" class="btn-switch__radio btn-switch__radio_no" />
+                                    <label for="yes" class="btn-switch__label btn-switch__label_yes"><span class="btn-switch__txt">Yes</span></label>
+                                    <label for="no" class="btn-switch__label btn-switch__label_no"><span class="btn-switch__txt">No</span></label>
+                                </p>
+                            </div>-->
+                            <div id="isRequiredCheckbox">
+                                <label>
+                                    <input type="checkbox" class="bigcheck" name="IsRequired" [(ngModel)]="Question.IsRequired" style="height:18px;width:30%;">
+                                    <span style="font-size:35px; font-weight:600" class="bigcheck-target"></span>
+                                </label>
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="form-group" style="display:flex">
+                                <div>
+                                    <label class="label-font">Select Answer Mode</label>
+                                </div>
+                                <div id="selectAnsModeColon">
+                                    <label class="label-font">:</label>
+                                </div>
+                                <div id="selectAnsModeSelect">
+                                    <select #answerMode='ngModel' name="QuestionTypeID" [(ngModel)]="Question.QuestionTypeID" (change)="onSelect($event.target.value)" required>
+                                        <option *ngFor="let type of questionTypes" value={{type.QuestionTypeID}}>{{type.text}}</option>
+                                    </select>
+                                </div>
+                                <div id="selectAnsModeSelectError" [hidden]="answerMode.valid || answerMode.untouched" class="alert alert-danger">
+                                    <span class="errorMessage">Please Select Answer Mode!</span>
+                                </div>
+                            </div><br><br>
+                            <div *ngIf="isVisible">
+                                <div class="form-group" *ngIf="optionType=='Radio' || optionType=='CheckBox'" style="width:95%;display:flex">
+                                    <div id="selectNoOption">
+                                        <label class="label-font">Select Number Of Options</label>
+                                    </div>
+                                    <div id="selectNoLevel">
+                                        <label class="label-font">:</label>
+                                    </div>
+                                    <div id="selectNumber">
+                                        <select class="form-control" name="optionNo" [(ngModel)]="optionNo" (change)="onNoSelect($event.target.value)">
+                                            <option value=1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3>3</option>
+                                            <option value=4>4</option>
+                                            <option value=5>5</option>
+                                            <option value=6>6</option>
+                                            <option value=7>7</option>
+                                            <option value=8>8</option>
+                                            <option value=9>9</option>
+                                            <option value=10>10</option>
+                                        </select><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="isVisible">
+                            <div *ngIf="optionType=='Short Text'" class="form-group">
+                                <input type="text" readonly placeholder="TextBox : Read Only">
+                            </div>
+
+                            <div *ngIf="optionType=='Long Text'" class="form-group">
+                                <textarea class="textArea" readonly placeholder="TextArea : Read Only"></textarea>
+                            </div>
+
+                            <div *ngIf="optionType=='Number'" class="form-group">
+                                <input type="text" readonly placeholder="Number : Read Only">
+                            </div>
+
+                            <div *ngIf="optionType=='E-Mail'" class="form-group">
+                                <input type="text" readonly placeholder="E-Mail : Read Only">
+                            </div>
+
+                            <div *ngIf="optionType=='Date'" class="form-group">
+                                <input type="text" readonly placeholder="Date : Read Only">
+                            </div>
+                            <div *ngIf="optionType=='Radio'" class="form-group">
+                                <div *ngFor="let option of optionsArray; let i = index">
+                                    <input type="text" name="optionTextName{{i}}" [(ngModel)]="OptionText[i]" placeholder="Radio Option : {{i+1}}">
+                                </div>
+                            </div>
+                            <div *ngIf="optionType=='CheckBox'" class="form-group">
+                                <div *ngFor="let option of optionsArray; let i = index">
+                                    <input type="text" name="optionTextName{{i}}" [(ngModel)]="OptionText[i]" placeholder="CheckBox Option : {{i+1}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin:0 0 0 0;width:95%;">
+                    <div class="row" *ngIf="true">
+                        <div class="form-group">
+                            <button type="submit" class="button" [disabled]="!addQuestionForm.form.valid" style="width: 43%">Create Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

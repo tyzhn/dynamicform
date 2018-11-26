@@ -1,0 +1,285 @@
+  <div id="page-wrap">
+       
+        <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+                <form class="form-inline">
+                               <div class="form-group" style="width:100%">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <label>Search :</label>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <div  class="col-md-6 col-sm-12">
+                            <button data-toggle="modal" data-target="#addsysdiagramsModal" class="btn btn-primary " style="float:right">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+                </form>
+            </div>
+        </div>
+        <table id="jobid">
+            <tbody>
+                <tr>
+                    <td class="header_td">
+                        <div class="header_container">
+												 <div class="header_title" (click)="tbljoborderBy='name'; tbljobreverseSort = !tbljobreverseSort">name
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='name','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='name'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='principal_id'; tbljobreverseSort = !tbljobreverseSort">principal_id
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='principal_id','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='principal_id'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='diagram_id'; tbljobreverseSort = !tbljobreverseSort">diagram_id
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='diagram_id','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='diagram_id'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='version'; tbljobreverseSort = !tbljobreverseSort">version
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='version','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='version'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='definition'; tbljobreverseSort = !tbljobreverseSort">definition
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='definition','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='definition'}" class="fa fa-sort"></i></span>
+                            </div>
+					
+					 <div class="header_title" >Actions</div>
+
+                        </div>
+                    </td>
+
+                </tr>
+                <tr *ngFor="let data of sysdiagramsList ; let i= index">
+                    <td>
+                        <div class="row_container">
+						<div class="title_container">
+                                <div class="row_title">S.NO.</div>
+                                <div class="row_detail">
+									
+                                    <a (click)="showdetails(0,'sno')"><i class="fa fa-chevron-down" id="icon_sno{{i+1}}"></i></a>
+									
+                                    {{i+1}}
+                                </div>
+                            </div>
+													<div class="title_container">
+                                <div class="row_title">name</div>
+                                <div class="row_detail">
+                                    {{data.name}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">principal_id</div>
+                                <div class="row_detail">
+                                    {{data.principal_id}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">diagram_id</div>
+                                <div class="row_detail">
+                                    {{data.diagram_id}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">version</div>
+                                <div class="row_detail">
+                                    {{data.version}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">definition</div>
+                                <div class="row_detail">
+                                    {{data.definition}}
+                                </div>
+                            </div>
+										  <div class="title_container">
+                          <div class="row_title"> Actions</div>
+                          <div class="row_detail">
+						     <a href="javascript:void(0)" alt="Edit sysdiagrams" data-target="#editsysdiagramsModal" data-toggle="modal">
+                                   <span class="fa fa-edit" title="Edit sysdiagrams"> </span>
+                               </a>
+							 <a href="javascript:void(0)"  alt="Delete sysdiagrams">
+                                  <span class="fa fa-trash" title="Delete sysdiagrams"> </span>
+                            </a>
+						   </div>
+                        </div>
+                        <div class="detail_inner hidden" id="jobid{{i+1}}">
+
+						                            
+                        </div>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-7 col-sm-12 text-right">
+              
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--Add sysdiagrams modal-->
+	<div class="modal fade" id="addsysdiagramsModal" tabindex="-1" role="dialog" aria-labelledby="addsysdiagramsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="addsysdiagramsModalLabel">Add sysdiagrams</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">name</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.name" name="name" placeholder="name" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">principal_id</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.principal_id" name="principal_id" placeholder="principal_id" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">diagram_id</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.diagram_id" name="diagram_id" placeholder="diagram_id" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">version</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.version" name="version" placeholder="version" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">definition</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.definition" name="definition" placeholder="definition" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Edit sysdiagrams modal-->
+
+	<div class="modal fade" id="editsysdiagramsModal" tabindex="-1" role="dialog" aria-labelledby="editsysdiagramsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="editsysdiagramsModalLabel">Edit sysdiagrams</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">name</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.name" name="name" placeholder="name" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">principal_id</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.principal_id" name="principal_id" placeholder="principal_id" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">diagram_id</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.diagram_id" name="diagram_id" placeholder="diagram_id" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">version</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.version" name="version" placeholder="version" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">definition</label>
+                                            <input type="text" class="form-control" [(ngModel)]="sysdiagrams.definition" name="definition" placeholder="definition" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	

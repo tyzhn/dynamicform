@@ -1,0 +1,45 @@
+<div style="background-color:#4682b4; height:150px">
+</div><br><br><br><br>
+<div id="divMain" class="divMainQuestion">
+    <header class="header">
+        <div class="icons">
+            <!--<i class="fa fa-edit"></i>-->
+        </div>
+        <div class="header_container" style="display:flex">
+            <div id="headerTag">
+                <h1>{{formName}}</h1>
+            </div>
+            <!--<div class="btnRoute">
+                <a routerLink="/displayQuestion/{{SurveyFormId}}" class="btn" title="Go To Display Question"><i style="color:#ffffff; margin:1px 0 0 177px" class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            </div>-->
+        </div>
+    </header><br><br>
+
+    <div id="formNameRoute">
+        <a routerLink="/dynamicForm/" class="btn" title="Go To Dynamic Form">Dynamic Forms</a>
+    </div>
+
+    <hr style="margin-left:50px;width:89%;">
+
+    <form form (ngSubmit)="SaveSurveyFormName(SurveyFormName)" #surveyFormName="ngForm" novalidate>
+        <div id="divQuestion">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Form Name</label>
+                            <input type="text" class="form-control" #sureveyFormText='ngModel' name="SurveyFormName" [(ngModel)]="SurveyFormName" placeholder="Enter Form Name!!!" required />
+                            <div id="formNameError" [hidden]="sureveyFormText.valid || sureveyFormText.untouched" class="alert alert-danger">
+                                <span class="errorMessage">Please Enter Form Name!!!</span>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnFNameSubmit" [disabled]="!surveyFormName.form.valid" class="btn btn-success">Submit</button>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

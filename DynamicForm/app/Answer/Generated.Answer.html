@@ -1,0 +1,131 @@
+<div style="background-color:#4682b4; height:150px">
+</div><br><br><br><br>
+<div id="divMain" class="divMainAnswer">
+    <header class="header">
+        <div class="icons">
+            <!--<i class="fa fa-edit"></i>-->
+        </div>
+        <div class="header_container">
+            <div id="headerTagDiv">
+                <h1>{{formName}}</h1>
+            </div>
+            <!--<div id="btnRoute">
+                <a routerLink="/question" class="btn btn-info" title="Go To Display Question"><i style="color:#ffffff; margin-left:126px" class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                <a routerLink="/surveyForm/{{SurveyFormId}}" class="btn btn-info" title="Go To Survey Form"><i style="color:#ffffff; margin-left:-16px" class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            </div>-->
+        </div>
+    </header><br><br>
+
+    <div id="displayQuestion">
+        <a routerLink="/dynamicForm/" class="btn btn-info" title="Go To Dynamic Forms - Multi Tenant">Go To Dynamic Forms</a>
+        <a routerLink="/question/{{SurveyFormId}}" class="btn btn-info" title="Add More Questions">Add Questions</a>
+        <a routerLink="/surveyAnswer/{{SurveyFormId}}" class="btn btn-info" title="Go To Form Response">Response</a>
+    </div>
+
+    <hr style="margin-left:50px;width:89%;">
+
+    <form (ngSubmit)="SubmitAnswer(Answer); submitAnswerForm.reset()" #submitAnswerForm="ngForm" name="testForm">
+        <div style="margin-left: 50px">
+            <div *ngFor="let question of questionList;let i = index">
+                <div>
+                    <br>
+                    <!--Question and Delete Button -->
+                    <div id="qnNdDeleteDiv">
+                        <div id="questionTextLevel">
+                            <label style="color: #154265">{{i+1}}:{{question.QuestionText}}</label>
+                        </div>
+                        <div id="btnDeleteDiv" class="deletebtn">
+                            <!--<input type="button" id="btnDelete" (click)=DeleteQuestionByID(question.QuestionID) class="button deletebtn" title="Delete Question" value="Delete">-->
+                            <a class="btn btn-danger" id="btnDelete" title="Delete Question" (click)=DeleteQuestionByID(question.QuestionID)><i class="fa fa-trash-o"></i></a>
+                        </div>
+                    </div>
+                    <!--Question and Delete Button -->
+                    <!--Answer Fields-->
+
+                    <div id="ansFields">
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='Short Text'">
+                            <input type="text" #ansText='ngModel' [(ngModel)]="Answer[i].Text" placeholder="Enter {{question.QuestionText}}" class="widClass"
+                                   name="answer{{i}}" required={{question.IsRequired}}>
+                            <div id="textAnswerError" [hidden]="ansText.valid || ansText.untouched" class="alert alert-danger">
+                                <span class="errorMessage">Please Enter {{question.QuestionText}}!!!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='Long Text'">
+                            <textarea class="textArea" #ansTextArea='ngModel' [(ngModel)]="Answer[i].Text" placeholder="Enter {{question.QuestionText}}"
+                                      name="answer{{i}}" required={{question.IsRequired}}></textarea>
+                            <div id="tareaAnswerError" [hidden]="ansTextArea.valid || ansTextArea.untouched" class="alert alert-danger">
+                                <span class="errorMessage">Please Enter {{question.QuestionText}}!!!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='Number'">
+                            <input type="number" #ansNumber='ngModel' [(ngModel)]="Answer[i].Text" placeholder="Enter {{question.QuestionText}}" name="answer{{i}}"
+                                   required={{question.IsRequired}}>
+                            <div id="numberError" [hidden]="ansNumber.valid || ansNumber.untouched" class="alert alert-danger">
+                                <span class="errorMessage">Please Enter {{question.QuestionText}}!!!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='Date'">
+                            <input type="date" #ansDate='ngModel' [(ngModel)]="Answer[i].Text" placeholder="Enter {{question.QuestionText}}" name="answer{{i}}"
+                                   required={{question.IsRequired}}>
+                            <div id="dateError" [hidden]="ansDate.valid || ansDate.untouched" class="alert alert-danger">
+                                <span class="errorMessage">Please Enter {{question.QuestionText}}!!!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='E-Mail'">
+                            <input type="text" #EmailRef='ngModel' name="answer{{i}}" [(ngModel)]="Answer[i].Text" placeholder="Please Enter {{question.QuestionText}}"
+                                   required={{question.IsRequired}} pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+                            <div *ngIf="EmailRef.errors" class="alert alert-danger">
+                                <div id="eMailReqError" [hidden]="EmailRef.dirty || !EmailRef.touched" class="alert alert-danger">
+                                    <span class="errorMessage">Please Enter {{question.QuestionText}}!!!</span>
+                                </div>
+                                <div id="valideMailError" [hidden]="!EmailRef.errors.dirty && !EmailRef.errors.pattern">
+                                    <span class="errorMessage">Please Enter Valid {{question.QuestionText}}!!!</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='Radio'">
+                            <ul class="ul-list">
+                                <li *ngFor="let option of question.optionList">
+                                    <input type="radio" #ansRadio='ngModel' id="radio{{option.OptionID}}" name="answer{{i}}" [(ngModel)]="Answer[i].Text" value="{{option.OptionText}}"
+                                           (click)="Answer[i].Text=option.OptionText" required={{question.IsRequired}}>
+                                    <label id="radioAnsLabel" for="radio{{option.OptionID}}">{{option.OptionText}}</label>
+                                    <div id="radioSelectDiv" class="check"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group" *ngIf="question.QuestionTypeName=='CheckBox'">
+                            <div *ngFor="let option of question.optionList" style="margin:20px 0 0 0">
+                                <span>
+                                    <label>
+                                        <input type="checkbox" class="bigcheck" name="checkboxOptions" value="{{option.OptionText}}" (click)="setCheckboxAnswer(i,option.OptionText,Answer)" required={{question.IsRequired}}>
+                                        <span style="font-size:35px; font-weight:600" class="bigcheck-target"></span>
+                                        <label id="checkAnsLabel">{{option.OptionText}}</label>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Answer Fields-->
+                </div>
+            </div>
+        </div><br>
+        <hr style="margin-left:50px;width:89%;"><br>
+        <div class="row" id="divSubmit">
+            <div id="btnCancelSubmit" class="form-group">
+                <div id="btnSubmitDiv">
+                    <button id="btnAnsSubmit" type="submit" class="btn btn-success" [disabled]="!submitAnswerForm.form.valid">Submit</button>
+                </div>
+                <div id="btnCancelDiv">
+                    <input id="btnAnsCancel" type="reset" class="btn btn-danger">
+                </div>
+            </div><br><br>
+            <div></div>
+        </div>
+    </form>
+</div>

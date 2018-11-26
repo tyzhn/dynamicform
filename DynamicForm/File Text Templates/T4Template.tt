@@ -1,0 +1,52 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+
+<#@ assembly name="$(SolutionDir)\packages\System.Data.SqlClient.4.4.0\lib\net451\System.Data.SqlClient.dll" #>
+  <#@ assembly name="System.Core" #>
+    <#@ assembly name="System.Data" #>
+    <#@ assembly name="System.Data.DataSetExtensions" #>
+    <#@ assembly name="System.Xml" #>
+    <#@ assembly name="System.Xml.Linq" #>
+    <#@ import namespace="System.IO" #>
+    <#@ import namespace="System.Data.SqlClient" #>
+    <#@ import namespace="System.Data" #>
+    <#@ import namespace="System.Collections.Generic" #>
+    <#@ import namespace="System.Xml" #>
+    <#@ import namespace="System.Xml.Linq" #>
+    <#@ import namespace="System.Text" #>
+    <#@ import namespace="System.Linq" #>
+
+<#@ output extension=".js" #>
+<#@ include file="SaveOutput.tt" #>
+<#@ include file="A4ComponentTemplate.tt" #>
+ <#
+    string dbConnection = @"Data Source=IBZDT0003;Initial Catalog=DynamicForm;Integrated Security=SSPI";
+         using (SqlConnection connection = new SqlConnection(dbConnection))
+            {
+                connection.Open();
+                DataTable schema = connection.GetSchema("Tables");
+               string baseFileName= string.Empty;
+                foreach (DataRow row in schema.Rows)
+                {
+				baseFileName= row[2].ToString();
+
+				    GenerateServiceFile(baseFileName);
+                    SaveOutput("Generated."+baseFileName+".Service.ts",baseFileName);
+
+                    GenerateComponentFile(baseFileName);
+                    SaveOutput("Generated."+baseFileName+".Component.ts",baseFileName); 
+
+					
+				var cmd = new SqlCommand("select * from ["+baseFileName+"]", connection);
+                var reader = cmd.ExecuteReader();
+                var columns = Enumerable.Range(0, reader.FieldCount).Select(reader.GetName).ToList();
+				reader.Close();
+
+				GenerateHtmlFile(baseFileName,columns);
+                    SaveOutput("Generated."+baseFileName+".html",baseFileName); 
+                }
+               
+            }
+
+    #>
+
+

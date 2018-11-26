@@ -1,0 +1,127 @@
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\obj\Debug\Angular4_WebApiTemplate.csprojResolveAssemblyReference.cache
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\csc.exe
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\System.Collections.Immutable.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\System.Reflection.Metadata.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\vbc.exe
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\VBCSCompiler.exe
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\roslyn\VBCSCompiler.exe.config
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Angular4_WebApiTemplate.dll.config
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Angular4_WebApiTemplate.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Angular4_WebApiTemplate.pdb
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Microsoft.Web.Infrastructure.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Newtonsoft.Json.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Net.Http.Formatting.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Helpers.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Http.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Http.WebHost.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Mvc.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Razor.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Webpages.Deployment.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Webpages.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Webpages.Razor.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Razor.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Webpages.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Webpages.Deployment.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Webpages.Razor.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Helpers.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Mvc.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\Newtonsoft.Json.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Net.Http.Formatting.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Http.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\bin\System.Web.Http.WebHost.xml
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\obj\Debug\Angular4_WebApiTemplate.dll
+D:\Aditya\Reusable Assets\Angular4_WebApiTemplate\Angular4_WebApiTemplate\obj\Debug\Angular4_WebApiTemplate.pdb
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\csc.exe
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\System.Collections.Immutable.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\System.Reflection.Metadata.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\vbc.exe
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\VBCSCompiler.exe
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\roslyn\VBCSCompiler.exe.config
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Angular4_WebApiTemplate.dll.config
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Angular4_WebApiTemplate.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Angular4_WebApiTemplate.pdb
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Microsoft.Web.Infrastructure.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Newtonsoft.Json.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Data.Common.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Data.SqlClient.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Net.Http.Formatting.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Helpers.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Http.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Http.WebHost.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Mvc.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Razor.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Webpages.Deployment.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Webpages.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Webpages.Razor.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Razor.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Webpages.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Webpages.Deployment.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Webpages.Razor.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Helpers.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Mvc.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\Newtonsoft.Json.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Net.Http.Formatting.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Http.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\bin\System.Web.Http.WebHost.xml
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\obj\Debug\Angular4_WebApiTemplate.csprojResolveAssemblyReference.cache
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\obj\Debug\Angular4_WebApiTemplate.dll
+D:\Aditya\Reusable Assets\angular4_webapi_template\Angular4_WebApiTemplate\obj\Debug\Angular4_WebApiTemplate.pdb
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\csc.exe
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\System.Collections.Immutable.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\System.Reflection.Metadata.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\vbc.exe
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\VBCSCompiler.exe
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\roslyn\VBCSCompiler.exe.config
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\DynamicForm.dll.config
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\DynamicForm.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\DynamicForm.pdb
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\Microsoft.Web.Infrastructure.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\Newtonsoft.Json.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Data.Common.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Data.SqlClient.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Net.Http.Formatting.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Helpers.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Http.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Http.WebHost.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Mvc.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Razor.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Webpages.Deployment.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Webpages.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Webpages.Razor.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Razor.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Webpages.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Webpages.Deployment.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Webpages.Razor.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Helpers.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Mvc.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\Newtonsoft.Json.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Net.Http.Formatting.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Http.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\bin\System.Web.Http.WebHost.xml
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\obj\Debug\Angular4_WebApiTemplate.csprojResolveAssemblyReference.cache
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\obj\Debug\DynamicForm.dll
+E:\ReUsableAsset\DynamicForm\DynamicForm\DynamicForm\obj\Debug\DynamicForm.pdb

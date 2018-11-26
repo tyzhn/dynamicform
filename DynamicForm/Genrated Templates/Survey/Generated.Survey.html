@@ -1,0 +1,351 @@
+  <div id="page-wrap">
+       
+        <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+                <form class="form-inline">
+                               <div class="form-group" style="width:100%">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <label>Search :</label>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <div  class="col-md-6 col-sm-12">
+                            <button data-toggle="modal" data-target="#addSurveyModal" class="btn btn-primary " style="float:right">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+                </form>
+            </div>
+        </div>
+        <table id="jobid">
+            <tbody>
+                <tr>
+                    <td class="header_td">
+                        <div class="header_container">
+												 <div class="header_title" (click)="tbljoborderBy='SurveyID'; tbljobreverseSort = !tbljobreverseSort">SurveyID
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='SurveyID','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='SurveyID'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='BusinessUnitID'; tbljobreverseSort = !tbljobreverseSort">BusinessUnitID
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='BusinessUnitID','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='BusinessUnitID'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='CreatedOn'; tbljobreverseSort = !tbljobreverseSort">CreatedOn
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='CreatedOn','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='CreatedOn'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='CreatedBy'; tbljobreverseSort = !tbljobreverseSort">CreatedBy
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='CreatedBy','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='CreatedBy'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='LastUpdatedOn'; tbljobreverseSort = !tbljobreverseSort">LastUpdatedOn
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='LastUpdatedOn','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='LastUpdatedOn'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='LastUpdatedBy'; tbljobreverseSort = !tbljobreverseSort">LastUpdatedBy
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='LastUpdatedBy','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='LastUpdatedBy'}" class="fa fa-sort"></i></span>
+                            </div>
+											 <div class="header_title" (click)="tbljoborderBy='SurveyFormName'; tbljobreverseSort = !tbljobreverseSort">SurveyFormName
+                              <span><i [ngClass]="{'fa-sort-asc':!tbljobreverseSort && tbljoborderBy=='SurveyFormName','fa-sort-desc':tbljobreverseSort&& tbljoborderBy=='SurveyFormName'}" class="fa fa-sort"></i></span>
+                            </div>
+					
+					 <div class="header_title" >Actions</div>
+
+                        </div>
+                    </td>
+
+                </tr>
+                <tr *ngFor="let data of SurveyList ; let i= index">
+                    <td>
+                        <div class="row_container">
+						<div class="title_container">
+                                <div class="row_title">S.NO.</div>
+                                <div class="row_detail">
+									
+                                    <a (click)="showdetails(0,'sno')"><i class="fa fa-chevron-down" id="icon_sno{{i+1}}"></i></a>
+									
+                                    {{i+1}}
+                                </div>
+                            </div>
+													<div class="title_container">
+                                <div class="row_title">SurveyID</div>
+                                <div class="row_detail">
+                                    {{data.SurveyID}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">BusinessUnitID</div>
+                                <div class="row_detail">
+                                    {{data.BusinessUnitID}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">CreatedOn</div>
+                                <div class="row_detail">
+                                    {{data.CreatedOn}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">CreatedBy</div>
+                                <div class="row_detail">
+                                    {{data.CreatedBy}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">LastUpdatedOn</div>
+                                <div class="row_detail">
+                                    {{data.LastUpdatedOn}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">LastUpdatedBy</div>
+                                <div class="row_detail">
+                                    {{data.LastUpdatedBy}}
+                                </div>
+                            </div>
+												<div class="title_container">
+                                <div class="row_title">SurveyFormName</div>
+                                <div class="row_detail">
+                                    {{data.SurveyFormName}}
+                                </div>
+                            </div>
+										  <div class="title_container">
+                          <div class="row_title"> Actions</div>
+                          <div class="row_detail">
+						     <a href="javascript:void(0)" alt="Edit Survey" data-target="#editSurveyModal" data-toggle="modal">
+                                   <span class="fa fa-edit" title="Edit Survey"> </span>
+                               </a>
+							 <a href="javascript:void(0)"  alt="Delete Survey">
+                                  <span class="fa fa-trash" title="Delete Survey"> </span>
+                            </a>
+						   </div>
+                        </div>
+                        <div class="detail_inner hidden" id="jobid{{i+1}}">
+
+						                            
+                        </div>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-7 col-sm-12 text-right">
+              
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--Add Survey modal-->
+	<div class="modal fade" id="addSurveyModal" tabindex="-1" role="dialog" aria-labelledby="addSurveyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="addSurveyModalLabel">Add Survey</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">SurveyID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.SurveyID" name="SurveyID" placeholder="SurveyID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">BusinessUnitID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.BusinessUnitID" name="BusinessUnitID" placeholder="BusinessUnitID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">CreatedOn</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.CreatedOn" name="CreatedOn" placeholder="CreatedOn" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">CreatedBy</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.CreatedBy" name="CreatedBy" placeholder="CreatedBy" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">LastUpdatedOn</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.LastUpdatedOn" name="LastUpdatedOn" placeholder="LastUpdatedOn" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">LastUpdatedBy</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.LastUpdatedBy" name="LastUpdatedBy" placeholder="LastUpdatedBy" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">SurveyFormName</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.SurveyFormName" name="SurveyFormName" placeholder="SurveyFormName" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Edit Survey modal-->
+
+	<div class="modal fade" id="editSurveyModal" tabindex="-1" role="dialog" aria-labelledby="editSurveyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="editSurveyModalLabel">Edit Survey</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">SurveyID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.SurveyID" name="SurveyID" placeholder="SurveyID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">BusinessUnitID</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.BusinessUnitID" name="BusinessUnitID" placeholder="BusinessUnitID" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">CreatedOn</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.CreatedOn" name="CreatedOn" placeholder="CreatedOn" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">CreatedBy</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.CreatedBy" name="CreatedBy" placeholder="CreatedBy" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">LastUpdatedOn</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.LastUpdatedOn" name="LastUpdatedOn" placeholder="LastUpdatedOn" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">LastUpdatedBy</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.LastUpdatedBy" name="LastUpdatedBy" placeholder="LastUpdatedBy" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					
+			  <div class="row">
+                                <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-1px">
+                                    <div class="col-md-12 col-sm-12 col-sm-12" style="margin-top:-2px">
+                                        <fieldset class="form-group" >
+                                            <label for="description">SurveyFormName</label>
+                                            <input type="text" class="form-control" [(ngModel)]="Survey.SurveyFormName" name="SurveyFormName" placeholder="SurveyFormName" >
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+					      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	

@@ -1,0 +1,5 @@
+E:\BitBucketProjects\DynamicForm\dynamic-form-multi-tenant\DynamicForm.DTO\bin\Debug\DynamicForm.DTO.dll
+E:\BitBucketProjects\DynamicForm\dynamic-form-multi-tenant\DynamicForm.DTO\bin\Debug\DynamicForm.DTO.pdb
+E:\BitBucketProjects\DynamicForm\dynamic-form-multi-tenant\DynamicForm.DTO\obj\Debug\DynamicForm.DTO.dll
+E:\BitBucketProjects\DynamicForm\dynamic-form-multi-tenant\DynamicForm.DTO\obj\Debug\DynamicForm.DTO.pdb
+E:\BitBucketProjects\DynamicForm\dynamic-form-multi-tenant\DynamicForm.DTO\obj\Debug\DynamicForm.DTO.csprojResolveAssemblyReference.cache

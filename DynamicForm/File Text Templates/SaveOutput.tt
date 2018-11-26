@@ -1,0 +1,28 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true" #>
+<#@ import namespace="System.IO" #>
+
+<#+
+  void SaveOutput(string outputFileName,string fileType)
+  {
+      string templateDirectory = Path.Combine(Host.ResolveAssemblyReference("$(ProjectDir)"),"app",fileType);
+	  string alternateTemplateDirectory = Path.Combine(Host.ResolveAssemblyReference("$(ProjectDir)"),"Genrated Templates",fileType);
+	  if (!Directory.Exists(templateDirectory))
+            {
+                Directory.CreateDirectory(templateDirectory);
+            }
+      string outputFilePath = Path.Combine(templateDirectory, outputFileName);
+
+	  if(File.Exists(outputFilePath))
+	  {
+	    if (!Directory.Exists(alternateTemplateDirectory))
+            {
+                Directory.CreateDirectory(alternateTemplateDirectory);
+            }
+	 outputFilePath = Path.Combine(alternateTemplateDirectory, outputFileName);
+	  }
+	 
+      File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+      this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+  }
+
+#>

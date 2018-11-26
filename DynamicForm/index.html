@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>DynamicForm-MultiTenant</title>
+	<meta charset="utf-8" />
+
+    <!--<link href="/assets/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="/assets/font-awsome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/hierarchicalGrid.css" rel="stylesheet" />
+    <link href="assets/css/CustomStyle.css" rel="stylesheet" />
+    <script src="libs/core-js/client/shim.min.js"></script>
+    <script src="libs/zone.js/dist/zone.js"></script>
+    <script src="libs/systemjs/dist/system.src.js"></script>
+    <link href="/assets/css/styles.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="/assets//alertifyjs/alertify.js"></script>
+    <link href="assets/alertifyjs/css/alertify.min.css" rel="stylesheet"/>
+
+    <!-- 2. Configure SystemJS -->
+    <script src="appScripts/systemjs.config.js"></script>
+    <script>
+        System.import('../appScripts/main.js').catch(function (err)
+        {
+            console.error(err);
+        });
+    </script>
+    <script src="assets/scripts/jquery-1.10.2.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <my-app>Loading...</my-app>
+</body>
+</html>

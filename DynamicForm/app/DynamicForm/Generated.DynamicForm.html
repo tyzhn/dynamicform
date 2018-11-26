@@ -1,0 +1,37 @@
+<!--<app-answer></app-answer>-->
+<div style="background-color:#4682b4; height:150px">
+</div><br><br><br><br>
+<div id="divMain" class="divMainAnswer">
+    <header class="header">
+        <div class="icons">
+            
+        </div>
+        <div class="header_container">
+            <div id="formHeaderTag">
+                <h1>Multi Tenant - Dynamic Forms</h1>
+            </div>
+        </div>
+    </header><br><br>
+
+    <div id="btnCreateForm">
+        <a routerLink="/formName/" class="btn btn-info" title="Go To Create New Form">Create New Form</a>
+    </div>
+
+    <hr style="margin-left:50px;width:89%;">
+
+    <form #dynamicFormInfo="ngForm" name="dynamicFormInfo">
+        <div style="margin-left: 50px">
+            <div *ngFor="let form of FormList;let i = index">
+                <div>
+                    <br>
+                    <div id="formName">
+                        <div id="formNameLevel">
+                            <!--<a routerLink="/surveyForm/{{form.SurveyID}}" title="Go To {{form.SurveyFormName}} Form">{{i+1}}:{{form.SurveyFormName}}</a>-->
+                            <a routerLink="/displayQuestion/{{form.SurveyID}}" title="Go To {{form.SurveyFormName}} Form">{{i+1}}:{{form.SurveyFormName}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+    </form>
+</div>
